@@ -2,10 +2,14 @@ package com.example.demo.repository;
 
 import com.example.demo.models.Customer;
 import org.springframework.data.repository.CrudRepository;
-//import org.springframework.data.repository.Repository;
-//import java.io.Serializable;
 
-//interface BaseRepo<T, ID extends Serializable>
+public interface CustomerRepo extends CrudRepository<Customer, Integer> {
+
+    //    Customer findBySalary(int salary);
+
+}
+
+//interface CrudRepository<T, ID extends Serializable>
 //        extends Repository<T, ID> {
 //
 //            <S extends T> S save(S entity);
@@ -22,10 +26,5 @@ import org.springframework.data.repository.CrudRepository;
 //
 //            // … more functionality omitted.
 //}
-
-public interface CustomerRepo extends CrudRepository<Customer, Integer> {
-
-    //    Customer findBySalary(int salary);
-}
 
 
