@@ -23,9 +23,9 @@ import org.springframework.data.repository.CrudRepository;
 //            // … more functionality omitted.
 //}
 
-public interface CustomerRepo extends CrudRepository<Customer, Long> {
+public interface CustomerRepo extends CrudRepository<Customer, Integer> {
 
-//    Customer findBySalary(int salary);
+    //    Customer findBySalary(int salary);
 }
 
 

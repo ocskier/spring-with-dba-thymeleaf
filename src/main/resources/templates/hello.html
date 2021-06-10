@@ -1,10 +1,50 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        h1 {
+            text-decoration: underline;
+            font-weight: bolder;
+            font-size: 3rem;
+            margin: 2rem 2rem;
+            text-align: center;
+        }
+        .customerCtn {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .ui.card {
+            margin: 1rem !important;
+        }
+
+    </style>
 </head>
 <body>
-<p th:text='${#strings.concat("Whats up: ", name)}'></p>
+<h1 th:text='${#strings.concat(name, " Customers")}'></h1>
+<div class="customerCtn">
+    <div class="ui card" th:each="customer: ${customers}">
+        <div class="image">
+            <img src="">
+        </div>
+        <div class="content">
+            <a class="header" th:text="${customer.name}"></a>
+            <div class="meta">
+                <span th:text='${#strings.concat("Age: ", customer.age)}'></span>
+            </div>
+            <div class="description" th:text='${#strings.concat("Location: ", customer.address)}'></div>
+        </div>
+        <div class="extra content">
+            <a>
+                <i class="user icon"></i>
+                <span th:text='${"Customer since: "}'></span>
+            </a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
