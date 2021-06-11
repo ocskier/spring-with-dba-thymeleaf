@@ -1,0 +1,64 @@
+ :root {
+    --background: rgb(47 47 57);
+    --color: rgb(171 126 249 / 77%) !important;
+ }
+
+body {
+    background: var(--background);
+    color: var(--color);
+}
+
+ h1 {
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: 3rem;
+    margin: 2rem 2rem;
+    text-align: center;
+}
+
+span {
+    color: white;
+}
+
+.customerCtn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.ui.card {
+    margin: 1.8rem !important;
+    border: 2px dashed lightblue;
+    box-shadow: none;
+    background: transparent;
+}
+
+.ui.card:hover, .ui.card:hover .content a.header {
+    -webkit-box-shadow: 5px 5px 25px 10px var(--color);
+    box-shadow: 5px 5px 25px 10px var(--color);
+    transition: box-shadow 0.8s;
+}
+
+.ui.card .content a.header {
+    background: var(--background);
+    border: 2px solid lightblue;
+    border-radius: 5px;
+    padding: 0.75rem 0.4rem;
+    margin-top: -2.0rem !important;
+    margin-bottom: 0.5rem;
+    color: var(--color);
+}
+
+.description {
+    color: var(--color) !important;
+}
+
+.content>.description:before {
+    content: "🗺 ";
+}
+
+.ui.card>:last-child, .ui.cards>.card>:last-child {
+    border-radius: 5px !important;
+    background: var(--color);
+    margin: 0.5em 1em;
+}

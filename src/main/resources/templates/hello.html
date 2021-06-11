@@ -4,25 +4,7 @@
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        h1 {
-            text-decoration: underline;
-            font-weight: bolder;
-            font-size: 3rem;
-            margin: 2rem 2rem;
-            text-align: center;
-        }
-        .customerCtn {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .ui.card {
-            margin: 1rem !important;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <h1 th:text='${#strings.concat(name, " Customers")}'></h1>
