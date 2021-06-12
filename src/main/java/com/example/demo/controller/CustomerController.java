@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import java.util.Objects;
 import com.example.demo.models.Customer;
+import com.example.demo.models.FormData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.service.CustomerService;
@@ -24,8 +26,12 @@ public class CustomerController {
         return customerService.getCustomerById(id);
     }
     @PostMapping("/customers")
-    private void addStudent(HttpServletResponse response, Customer customer) throws IOException {
-        System.out.println(customer.toString());
+    private void addStudent(HttpServletResponse response, @ModelAttribute("customer") FormData data) throws IOException {
+        Customer customer = new Customer();
+        customer.setName(data.getName());
+        customer.setAge(data.getAge());
+        customer.setAddress(data.getAddress());
+        customer.setSalary(data.getSalary());
         customerService.addUser(customer);
         response.sendRedirect("/hello");
     }
