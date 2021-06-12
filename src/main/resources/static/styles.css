@@ -6,6 +6,7 @@
 body {
     background: var(--background);
     color: var(--color);
+    margin: 1rem;
 }
 
 form {
