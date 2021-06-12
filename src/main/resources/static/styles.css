@@ -8,6 +8,22 @@ body {
     color: var(--color);
 }
 
+form {
+    margin-top: 2rem;
+    max-width: 30em;
+    min-width: 16rem;
+}
+
+form p {
+    display: flex;
+    justify-content: space-between;
+    min-height: 1.6em;
+}
+
+form p input {
+    border-radius: 5px;
+}
+
  h1 {
     text-decoration: underline;
     font-weight: bolder;

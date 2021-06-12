@@ -25,6 +25,7 @@ public class CustomerController {
     }
     @PostMapping("/customers")
     private void addStudent(HttpServletResponse response, Customer customer) throws IOException {
+        System.out.println(customer.toString());
         customerService.addUser(customer);
         response.sendRedirect("/hello");
     }
