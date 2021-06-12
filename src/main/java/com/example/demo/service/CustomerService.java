@@ -20,4 +20,8 @@ public class CustomerService {
         Customer customer = customerRepo.findById(id).get();
         return customer;
     }
+    public Customer addUser(Customer customer) {
+        Customer createdCustomer = customerRepo.save(customer);
+        return createdCustomer;
+    }
 }
