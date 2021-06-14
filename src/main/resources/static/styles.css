@@ -79,3 +79,7 @@ span {
     background: var(--color);
     margin: 0.5em 1em;
 }
+
+#footer-link{
+    padding-bottom: 1rem;
+}

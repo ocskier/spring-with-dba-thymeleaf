@@ -10,7 +10,7 @@
 <body>
 <h1 th:text='${#strings.concat(name, " Customers")}'></h1>
 <div class="customerCtn">
-    <div class="ui card" th:each="customer: ${customers}">
+    <div class="ui card" onclick="" th:each="customer: ${customers}">
         <div class="image">
             <img src="">
         </div>
@@ -29,6 +29,6 @@
         </div>
     </div>
 </div>
-<p>Add a customer <a href="/">here</a></p>
+<p id="footer-link">Add a customer <a href="/">here</a></p>
 </body>
 </html>
