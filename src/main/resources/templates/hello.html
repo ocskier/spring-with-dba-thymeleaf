@@ -15,7 +15,7 @@
             <img src="">
         </div>
         <div class="content">
-            <a class="header" th:text="${customer.name}"></a>
+            <p class="header"><span th:text="${customer.name}"></span><i class="trash alternate outline icon" th:onclick="deleteById(event, [[${customer.id}]])"></i></p>
             <div class="meta">
                 <span th:text='${#strings.concat("Age: ", customer.age)}'></span>
             </div>
@@ -30,5 +30,6 @@
     </div>
 </div>
 <p id="footer-link">Add a customer <a href="/">here</a></p>
+<script src="app.js"></script>
 </body>
 </html>

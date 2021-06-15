@@ -24,4 +24,8 @@ public class CustomerService {
         Customer createdCustomer = customerRepo.save(customer);
         return createdCustomer;
     }
+    public Boolean deleteUserById(int id) {
+        customerRepo.deleteById(id);
+        return true;
+    }
 }

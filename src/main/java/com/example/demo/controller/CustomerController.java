@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.io.PrintWriter;
 import java.util.Objects;
 import com.example.demo.models.Customer;
 import com.example.demo.models.FormData;
@@ -34,5 +35,18 @@ public class CustomerController {
         customer.setSalary(data.getSalary());
         customerService.addUser(customer);
         response.sendRedirect("/hello");
+    }
+    @DeleteMapping("/customers/{id}")
+    private void deleteStudent(HttpServletResponse response, @PathVariable("id") int id) throws IOException {
+        Boolean isDeleted = customerService.deleteUserById(id);
+        if (isDeleted){
+            response.setStatus(200);
+        } else {
+            response.setStatus(404);
+        }
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        out.print(isDeleted);
+        out.flush();
     }
 }

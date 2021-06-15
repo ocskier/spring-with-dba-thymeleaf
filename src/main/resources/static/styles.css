@@ -33,7 +33,7 @@ form p input {
     text-align: center;
 }
 
-span {
+.meta span {
     color: white;
 }
 
@@ -50,13 +50,13 @@ span {
     background: transparent;
 }
 
-.ui.card:hover, .ui.card:hover .content a.header {
+.ui.card:hover, .ui.card:hover .content p.header {
     -webkit-box-shadow: 5px 5px 25px 10px var(--color);
     box-shadow: 5px 5px 25px 10px var(--color);
     transition: box-shadow 0.8s;
 }
 
-.ui.card .content a.header {
+.ui.card .content p.header {
     background: var(--background);
     border: 2px solid lightblue;
     border-radius: 5px;
@@ -64,6 +64,10 @@ span {
     margin-top: -2.0rem !important;
     margin-bottom: 0.5rem;
     color: var(--color);
+}
+
+.ui.card .content p.header i {
+    float: right;
 }
 
 .description {
