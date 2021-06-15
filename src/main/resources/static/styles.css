@@ -84,6 +84,12 @@ form p input {
     margin: 0.5em 1em;
 }
 
+i.trash.alternate.outline.icon:hover {transform: scale(1.3);}
+
+i.trash.alternate.outline.icon {
+    transition: 0.7s;
+}
+
 #footer-link{
     padding-bottom: 1rem;
 }
