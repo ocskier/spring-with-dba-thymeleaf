@@ -34,7 +34,7 @@ form p input {
 }
 
 input[type="date"], input[type="text"], input[type="number"] {
-    min-width: 12.5rem;
+    min-width: 14rem;
 }
 
 input[type="submit"], input[type="reset"] {
