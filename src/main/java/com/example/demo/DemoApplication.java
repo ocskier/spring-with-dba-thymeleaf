@@ -5,9 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import com.example.demo.service.CustomerService;
 import com.example.demo.models.Customer;
 
@@ -29,5 +27,11 @@ public class DemoApplication {
 		model.addAttribute("name", name);
 		model.addAttribute("customers", customers);
 		return "hello";
+	}
+	@GetMapping("/customer/{id}")
+	public String hello(@PathVariable("id") int id, Model model) {
+		Customer customer = customerService.getCustomerById(id);
+		model.addAttribute("customer", customer);
+		return "update";
 	}
 }

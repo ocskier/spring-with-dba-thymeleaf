@@ -17,8 +17,10 @@
             <img src="">
         </div>
         <div class="content">
-            <p class="header"><span th:text="${customer.name}"></span><i class="trash alternate outline icon"
-                                                                         th:onclick="deleteById(event, [[${customer.id}]])"></i>
+            <p class="header">
+                <span th:text="${customer.name}"></span>
+                <i class="trash alternate outline icon" th:onclick="deleteById(event, [[${customer.id}]])"></i>
+                <a th:href="${#strings.concat('/customer/', customer.id)}"><i class="edit alternate outline icon"></i></a>
             </p>
             <div class="meta">
                 <span th:text='${#strings.concat("Age: ", customer.age)}'></span>

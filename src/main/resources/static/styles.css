@@ -9,6 +9,14 @@ body {
     margin: 1rem;
 }
 
+h1 {
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: 3rem;
+    margin: 2rem 2rem;
+    text-align: center;
+}
+
 form {
     margin-top: 2rem;
     max-width: 30em;
@@ -25,16 +33,12 @@ form p input {
     border-radius: 5px;
 }
 
- h1 {
-    text-decoration: underline;
-    font-weight: bolder;
-    font-size: 3rem;
-    margin: 2rem 2rem;
-    text-align: center;
+input[type="date"], input[type="text"], input[type="number"] {
+    min-width: 12.5rem;
 }
 
-input[type="date"] {
-    padding: 0 18px;
+input[type="submit"], input[type="reset"] {
+    padding: 0 0.6rem;
 }
 
 .meta span {
@@ -70,6 +74,11 @@ input[type="date"] {
     color: var(--color);
 }
 
+.ui.card .content p.header a {
+    float: right;
+    margin: 0 0.2rem;
+}
+
 .ui.card .content p.header i {
     float: right;
     height: auto;
@@ -90,13 +99,18 @@ input[type="date"] {
     margin: 0.5em 1em;
 }
 
-i.trash.alternate.outline.icon:hover {
+i.edit.alternate.outline.icon {
+    padding-right: 0.20rem;
+    padding-left: 0.15rem;
+}
+
+i.trash.alternate.outline.icon:hover, a i.edit.alternate.outline.icon:hover {
     transform: scale(1.4);
     border: 1px solid white;
     border-radius: 0.4rem;
 }
 
-i.trash.alternate.outline.icon {
+i.trash.alternate.outline.icon, a i.edit.alternate.outline.icon {
     transition: 0.6s;
 }
 

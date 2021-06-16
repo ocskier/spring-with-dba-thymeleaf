@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,6 +27,7 @@ public class Customer {
     private String address;
 
     @Column()
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateJoined;
 
     public Customer(String name, int age, String address, LocalDate dateJoined) {

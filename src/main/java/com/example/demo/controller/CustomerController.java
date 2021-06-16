@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import java.io.PrintWriter;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import com.example.demo.models.Customer;
 import com.example.demo.models.FormData;
