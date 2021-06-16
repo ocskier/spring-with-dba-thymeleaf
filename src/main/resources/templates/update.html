@@ -9,12 +9,13 @@
 </head>
 <body>
 <p>See your customers <a href="/hello">here</a></p>
-<form action="#" th:action="@{#strings.concat('/api/customers/',id)}" th:object="${customer}" method="put">
+<form th:object="${customer}" th:onsubmit="updateById(event, [[*{id}]])">
   <p><span>Name: </span><input type="text" name="name" th:field="*{name}"/></p>
   <p><span>Age: </span><input type="number" name="age" th:field="*{age}"/></p>
   <p><span>Address: </span><input type="text" name="address" th:field="*{address}"/></p>
   <p><span>Join Date: </span><input type="date" name="date" th:field="*{dateJoined}"/></p>
   <p><input type="submit" value="Save" /><input type="reset" value="Reset" /></p>
 </form>
+<script src="../app.js"></script>
 </body>
 </html>
