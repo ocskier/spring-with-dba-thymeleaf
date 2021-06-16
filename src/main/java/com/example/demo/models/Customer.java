@@ -26,6 +26,13 @@ public class Customer {
     @Column()
     private int salary;
 
+    public Customer(String name, int age, String address, int salary) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.salary = salary;
+    }
+
     // getters and setters
     public int getId()
     {
