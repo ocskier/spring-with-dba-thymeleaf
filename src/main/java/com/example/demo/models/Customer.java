@@ -33,6 +33,7 @@ public class Customer {
         this.address = address;
         this.dateJoined = dateJoined;
     }
+    public Customer() {}
 
     // getters and setters
     public int getId()
