@@ -11,10 +11,10 @@
 <p>See your customers <a href="/hello">here</a></p>
 <form action="#" th:action="@{/customers}" th:object="${customer}" method="post">
     <p><span>Name: </span><input type="text" name="name"/></p>
-    <p><span>Age: </span><input type="text" name="age"/></p>
+    <p><span>Age: </span><input type="number" name="age"/></p>
     <p><span>Address: </span><input type="text" name="address"/></p>
-    <p><span>Salary: </span><input type="text" name="salary"/></p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    <p><span>Join Date: </span><input type="date" name="date"/></p>
+    <p><input type="submit" value="Submit" /><input type="reset" value="Reset" /></p>
 </form>
 </body>
 </html>

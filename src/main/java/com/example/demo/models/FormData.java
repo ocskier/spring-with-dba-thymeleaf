@@ -1,7 +1,5 @@
 package com.example.demo.models;
 
-import java.time.LocalTime;
-
 public class FormData {
     private String name;
     private int age;

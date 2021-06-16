@@ -2,10 +2,12 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+          integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 <h1 th:text='${#strings.concat(name, " Customers")}'></h1>
@@ -15,16 +17,21 @@
             <img src="">
         </div>
         <div class="content">
-            <p class="header"><span th:text="${customer.name}"></span><i class="trash alternate outline icon" th:onclick="deleteById(event, [[${customer.id}]])"></i></p>
+            <p class="header"><span th:text="${customer.name}"></span><i class="trash alternate outline icon"
+                                                                         th:onclick="deleteById(event, [[${customer.id}]])"></i>
+            </p>
             <div class="meta">
                 <span th:text='${#strings.concat("Age: ", customer.age)}'></span>
             </div>
-            <div class="description" th:text='${#strings.concat("Location: ", customer.address)}'></div>
+            <div class="description" th:text='${#strings.concat("Location:  ", customer.address)}'></div>
         </div>
         <div class="extra content">
             <a>
                 <i class="user icon"></i>
-                <span th:text='${"Customer since: "}'></span>
+                <span th:text='${"Customer since:  "}'></span>
+                <span th:text="${#strings.concat(#temporals.monthName(customer.dateJoined),
+                ' ',#temporals.day(customer.dateJoined),
+                ', ',#temporals.year(customer.dateJoined))}"></span>
             </a>
         </div>
     </div>

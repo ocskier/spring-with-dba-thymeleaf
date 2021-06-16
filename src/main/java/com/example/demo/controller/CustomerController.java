@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.io.PrintWriter;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import com.example.demo.models.Customer;
 import com.example.demo.models.FormData;
@@ -29,6 +30,7 @@ public class CustomerController {
 
     @PostMapping("/customers")
     private void addStudent(HttpServletResponse response, @ModelAttribute("customer") FormData data) throws IOException {
+        System.out.println(data.getDate());
         LocalDate joinDate;
         if (data.getDate().isEmpty()){
             joinDate = LocalDate.now();
