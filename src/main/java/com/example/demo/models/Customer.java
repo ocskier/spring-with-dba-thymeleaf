@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "CUSTOMER")
@@ -24,13 +25,13 @@ public class Customer {
     private String address;
 
     @Column()
-    private int salary;
+    private LocalDate dateJoined;
 
-    public Customer(String name, int age, String address, int salary) {
+    public Customer(String name, int age, String address, LocalDate dateJoined) {
         this.name = name;
         this.age = age;
         this.address = address;
-        this.salary = salary;
+        this.dateJoined = dateJoined;
     }
 
     // getters and setters
@@ -67,12 +68,12 @@ public class Customer {
         this.address = address;
     }
 
-    public int getSalary()
+    public LocalDate getDateJoined()
     {
-        return this.salary;
+        return this.dateJoined;
     }
-    public void setSalary(int salary)
+    public void setDateJoined(LocalDate dateJoined)
     {
-        this.salary = salary;
+        this.dateJoined = dateJoined;
     }
 }

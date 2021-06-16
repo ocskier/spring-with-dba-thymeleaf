@@ -1,10 +1,12 @@
 package com.example.demo.models;
 
+import java.time.LocalTime;
+
 public class FormData {
     private String name;
     private int age;
     private String address;
-    private int salary;
+    private String date;
 
     // getters and setters
     public String getName()
@@ -31,12 +33,12 @@ public class FormData {
     {
         this.address = address;
     }
-    public int getSalary()
+    public String getDate()
     {
-        return this.salary;
+        return this.date;
     }
-    public void setSalary(int salary)
+    public void setDate(String date)
     {
-        this.salary = salary;
+        this.date = date;
     }
 }

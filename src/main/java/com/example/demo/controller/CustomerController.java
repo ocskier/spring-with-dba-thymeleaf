@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import java.io.PrintWriter;
-import java.util.Objects;
+import java.time.LocalDate;
 
 import com.example.demo.models.Customer;
 import com.example.demo.models.FormData;
@@ -29,7 +29,13 @@ public class CustomerController {
 
     @PostMapping("/customers")
     private void addStudent(HttpServletResponse response, @ModelAttribute("customer") FormData data) throws IOException {
-        Customer customer = new Customer(data.getName(), data.getAge(), data.getAddress(), data.getSalary());
+        LocalDate joinDate;
+        if (data.getDate().isEmpty()){
+            joinDate = LocalDate.now();
+        } else {
+            joinDate = LocalDate.parse(data.getDate());
+        }
+        Customer customer = new Customer(data.getName(), data.getAge(), data.getAddress(), joinDate);
         customerService.addUser(customer);
         response.sendRedirect("/hello");
     }
