@@ -18,17 +18,17 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-    @GetMapping("/customers")
+    @GetMapping("/api/customers")
     private Iterable<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
     }
 
-    @GetMapping("/customers/{id}")
+    @GetMapping("/api/customers/{id}")
     private Customer getStudent(@PathVariable("id") int id) {
         return customerService.getCustomerById(id);
     }
 
-    @PostMapping("/customers")
+    @PostMapping("/api/customers")
     private void addStudent(HttpServletResponse response, @ModelAttribute("customer") FormData data) throws IOException {
         System.out.println(data.getDate());
         LocalDate joinDate;
@@ -42,7 +42,7 @@ public class CustomerController {
         response.sendRedirect("/hello");
     }
 
-    @DeleteMapping("/customers/{id}")
+    @DeleteMapping("/api/customers/{id}")
     private void deleteStudent(HttpServletResponse response, @PathVariable("id") int id) throws IOException {
         Boolean isDeleted = customerService.deleteUserById(id);
         if (isDeleted) {

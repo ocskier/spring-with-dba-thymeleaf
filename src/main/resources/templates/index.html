@@ -9,7 +9,7 @@
 </head>
 <body>
 <p>See your customers <a href="/hello">here</a></p>
-<form action="#" th:action="@{/customers}" th:object="${customer}" method="post">
+<form action="#" th:action="@{/api/customers}" th:object="${customer}" method="post">
     <p><span>Name: </span><input type="text" name="name"/></p>
     <p><span>Age: </span><input type="number" name="age"/></p>
     <p><span>Address: </span><input type="text" name="address"/></p>

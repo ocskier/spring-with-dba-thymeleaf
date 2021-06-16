@@ -25,10 +25,11 @@ public class CustomerService {
         return createdCustomer;
     }
     public Boolean deleteUserById(int id) {
-//        if (customerRepo.existsById(id)) {
-//            customerRepo.deleteById(id);
-//        }
-        customerRepo.deleteById(id);
-        return true;
+        if (customerRepo.existsById(id)) {
+            customerRepo.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
