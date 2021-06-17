@@ -14,21 +14,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @RestController
+@RequestMapping("/api")
 public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-    @GetMapping("/api/customers")
+    @GetMapping("/customers")
     private Iterable<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
     }
 
-    @GetMapping("/api/customers/{id}")
+    @GetMapping("/customers/{id}")
     private Customer getStudent(@PathVariable("id") int id) {
         return customerService.getCustomerById(id);
     }
 
-    @PostMapping("/api/customers")
+    @PostMapping("/customers")
     private void addStudent(HttpServletResponse response, @ModelAttribute("customer") FormData data) throws IOException {
         System.out.println(data.getDate());
         LocalDate joinDate;
@@ -42,7 +43,7 @@ public class CustomerController {
         response.sendRedirect("/hello");
     }
 
-    @PutMapping(value = "/api/customers/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/customers/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     private void updateStudent(HttpServletResponse response, @PathVariable("id") int id, @RequestBody FormData data) throws IOException {
         System.out.println(data.getAge());
         System.out.println(data.getDate());
@@ -60,7 +61,7 @@ public class CustomerController {
         out.flush();
     }
 
-    @DeleteMapping("/api/customers/{id}")
+    @DeleteMapping("/customers/{id}")
     private void deleteStudent(HttpServletResponse response, @PathVariable("id") int id) throws IOException {
         Boolean isDeleted = customerService.deleteUserById(id);
         if (isDeleted) {

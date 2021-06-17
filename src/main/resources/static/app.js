@@ -37,13 +37,13 @@ async function updateById(e,id) {
             document.querySelector('#update-toast').style.display = 'block';
             window.setTimeout(function(){
               location.replace('/hello');
-            }, 2200)
+            }, 2200);
         }
     } catch (err) {
         document.querySelector('#error-toast').style.display = 'block';
         window.setTimeout(function(){
             location.reload();
-        }, 2200)
+        }, 2200);
     }
 }
 
