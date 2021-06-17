@@ -129,3 +129,9 @@ i.trash.alternate.outline.icon, a i.edit.alternate.outline.icon {
 #footer-link{
     padding-bottom: 2rem;
 }
+
+@media screen and width(max-width: 698px) {
+    .ui.card {
+        flex-basis: 85%;
+    }
+}
