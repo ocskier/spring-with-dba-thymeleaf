@@ -5,10 +5,14 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-<p>See your customers <a href="/hello">here</a></p>
+<p class="customer-link">See your customers <a href="/hello">here</a></p>
 <form th:object="${customer}" th:onsubmit="updateById(event, [[*{id}]])">
   <p><span>Name: </span><input type="text" name="name" th:field="*{name}"/></p>
   <p><span>Age: </span><input type="number" name="age" th:field="*{age}"/></p>
@@ -16,6 +20,8 @@
   <p><span>Join Date: </span><input type="date" name="date" th:field="*{dateJoined}"/></p>
   <p><input type="submit" value="Save" /><input type="reset" value="Reset" /></p>
 </form>
+<div id="update-toast" class="animate__animated animate__slideInRight">Customer Added</div>
+<div id="error-toast" class="animate__animated animate__slideInRight">Could not update customer</div>
 <script src="../app.js"></script>
 </body>
 </html>

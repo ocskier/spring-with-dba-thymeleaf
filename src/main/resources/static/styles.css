@@ -18,9 +18,12 @@ h1 {
 }
 
 form {
-    margin-top: 2rem;
+    margin: 2rem auto 0 auto;
     max-width: 30em;
     min-width: 16rem;
+    padding: 1.4rem;
+    border: 2px solid white;
+    box-shadow: 0px 0px 16px -1px white;
 }
 
 form p {
@@ -45,6 +48,11 @@ input[type="submit"], input[type="reset"] {
     color: white;
 }
 
+.customer-link {
+    font-size: 1.65rem;
+    text-align: center;
+}
+
 .customerCtn {
     display: flex;
     flex-wrap: wrap;
@@ -56,6 +64,7 @@ input[type="submit"], input[type="reset"] {
     border: 2px dashed lightblue;
     box-shadow: none;
     background: transparent;
+    /* transition: all 0.5s; */
 }
 
 .ui.card:hover, .ui.card:hover .content p.header {
@@ -124,6 +133,27 @@ i.trash.alternate.outline.icon, a i.edit.alternate.outline.icon {
 
 .extra a span:last-child {
     float: right;
+}
+
+#update-toast, #error-toast {
+    display: none;
+    border: 2px solid white;
+    background-color: white;
+    font-weight:800;
+    min-height: 3rem;
+    width:fit-content;
+    padding: 1rem;
+    border-radius:0.4rem;
+    margin: 2em auto 0 auto;
+}
+
+#update-toast {
+    text-shadow: 0 0 black;
+}
+
+#error-toast {
+    background-color: #f76a6a;
+    color: black;
 }
 
 #footer-link{
