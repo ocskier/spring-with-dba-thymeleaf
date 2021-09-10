@@ -68,11 +68,14 @@ input[type="submit"], input[type="reset"] {
     transform: scale(1);
 }
 
+.ui.card:hover {
+    transform: scale(1.04);
+}
+
 .ui.card:hover, .ui.card:hover .content p.header {
     -webkit-box-shadow: 5px 5px 25px 10px var(--color);
     box-shadow: 5px 5px 25px 10px var(--color);
     transition: all 0.5s;
-    transform: scale(1.04);
 }
 
 .ui.card .content p.header {
