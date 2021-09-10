@@ -64,13 +64,15 @@ input[type="submit"], input[type="reset"] {
     border: 2px dashed lightblue;
     box-shadow: none;
     background: transparent;
-    /* transition: all 0.5s; */
+    transition: all 0.5s;
+    transform: scale(1);
 }
 
 .ui.card:hover, .ui.card:hover .content p.header {
     -webkit-box-shadow: 5px 5px 25px 10px var(--color);
     box-shadow: 5px 5px 25px 10px var(--color);
-    transition: box-shadow 0.8s;
+    transition: all 0.5s;
+    transform: scale(1.04);
 }
 
 .ui.card .content p.header {
@@ -81,6 +83,8 @@ input[type="submit"], input[type="reset"] {
     margin-top: -2.0rem !important;
     margin-bottom: 0.5rem;
     color: var(--color);
+    transition: all 0.5s;
+    transform: scale(1);
 }
 
 .ui.card .content p.header a {
@@ -160,7 +164,7 @@ i.trash.alternate.outline.icon, a i.edit.alternate.outline.icon {
     padding-bottom: 2rem;
 }
 
-@media screen and width(max-width: 698px) {
+@media screen and (max-width: 698px) {
     .ui.card {
         flex-basis: 85%;
     }
